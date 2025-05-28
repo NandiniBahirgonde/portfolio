@@ -4,7 +4,7 @@ This repository contains the source code for my personal portfolio website. The 
 
 ## Live Website
 
-View the live portfolio at: [[https://nandinibahirgonde.netlify.app](https://nandinibahirgonde.netlify.app)](https://nandinibahirgonde.netlify.app/)
+View the live portfolio at: https://nandinibahirgonde.netlify.app/
 
 ## Description
 
