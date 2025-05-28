@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nandini Bahirgonde | Portfolio</title>
+
+  <!-- Tailwind CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet" />
+
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(to bottom right, #001f3f, #005f73, #0a9396);
+      color: white;
+      transition: background 0.5s ease;
+    }
+
+    html.dark body {
+      background: linear-gradient(to bottom, #000000 0%, #222222 40%, #d1d1d1 100%);
+    }
+
+    #navbar {
+      transition: transform 0.3s ease-in-out;
+      transform: translateY(0);
+    }
+
+    .section-box {
+      background-color: rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(10px);
+      border-radius: 12px;
+      padding: 2rem;
+      margin-top: 80px; /* prevent overlap under fixed navbar */
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    .animate-fade-in {
+      animation: fadeIn 1s ease-in-out both;
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .animate-fade-up {
+      animation: fadeUp 0.8s ease-out both;
+    }
+
+    .floating-button {
+      transition: transform 0.3s ease;
+    }
+
+    .floating-button:hover {
+      transform: translateY(-3px);
+    }
+
+    .glow-border {
+      box-shadow: 0 0 8px rgba(0, 123, 255, 0.4);
+    }
+
+    .glow-border:hover {
+      box-shadow: 0 0 15px rgba(0, 123, 255, 0.7);
+    }
+    /* Add this to your existing <style> tag in <head> */
+    header {
+  transition: transform 0.3s ease;
+}
+
+.hide-navbar {
+  transform: translateY(-100%);
+}
+
+  </style>
+</head>
+
+<body class="transition duration-300 ease-in-out">
+
+  <!-- Navbar -->
+  <header class="sticky top-0 bg-opacity-90 backdrop-blur-md shadow z-50 dark:bg-gray-900 dark:text-white transition">
+    <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+      <h1 class="text-2xl font-bold text-white">
+         Nandini Bahirgonde
+      </h1>
+      <nav class="space-x-6 text-sm font-semibold">
+        <a href="#profile-intro" class="hover:text-blue-300">About</a>
+        <a href="#fun-facts" class="hover:text-blue-300">BeReal</a>
+        <a href="#experience" class="hover:text-blue-300">Experience</a>
+        <a href="#activities" class="hover:text-blue-300">Activities</a>
+        <a href="#campus-involvement" class="hover:text-blue-300">Campus Involvement</a>
+        <a href="#contact" class="hover:text-blue-300">Contact</a>
+        
+        <button id="toggleDark" class="ml-4 bg-white text-black dark:bg-gray-700 dark:text-white px-2 py-1 rounded text-xs hover:scale-105 transition">🌙</button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero -->
+<section class="py-20 px-6 animate-fade-in section-box max-w-6xl mx-auto mt-8 flex flex-col md:flex-row items-center justify-between">
+    <!-- Text Column -->
+    <div class="md:w-1/2 text-center md:text-left">
+      <h2 class="text-4xl sm:text-5xl font-bold mb-4 text-white">Hi, I'm Nandini Bahirgonde </h2>
+      <p class="text-lg text-white/80 max-w-xl mx-auto md:mx-0">
+        Computer Science undergrad at ASU | Aspiring Intern for Summer 2025 | Coder | Musician
+      </p>
+      <div class="mt-6">
+        <a href="./assets/NandiniB-Resume.pdf" download
+           class="floating-button glow-border bg-gradient-to-r from-blue-500 to-cyan-500 text-white font-semibold px-6 py-3 rounded-lg shadow-lg hover:scale-105 transition duration-300 ease-in-out">
+          Download Resume
+        </a>
+      </div>
+    </div>
+  
+    <!-- Image Column -->
+    <div class="md:w-1/2 mt-10 md:mt-0 flex justify-center">
+        <img src="./profile.png" alt="Nandini Bahirgonde"
+        class="w-48 h-48 md:w-64 md:h-64 rounded-full object-cover shadow-lg border-4 border-white dark:border-gray-700 transition duration-300" />
+</div>   
+  </section>
+  
+
+  <!-- Profile Introduction -->
+  <section id="profile-intro" class="py-16 px-6 max-w-4xl mx-auto animate-fade-up section-box mt-12">
+    <h3 class="text-3xl font-bold text-white mb-6"> Hi! I'm Nandini Bahirgonde.</h3>
+    <p class="text-white/90 text-lg leading-relaxed">
+      I'm a junior majoring in Computer Science at Arizona State University, with a passion for building technology that’s thoughtful, scalable, and human-centered.
+      My academic and personal projects reflect a deep interest in the intersection of web development, machine learning, and user experience design.
+      Over the years, I've taken a hands-on approach to learning — diving into front-end tools like <strong>React</strong> and <strong>Tailwind CSS</strong>, strengthening my backend fundamentals, and exploring the possibilities of intelligent systems through <strong>Python</strong> and AI frameworks.
+    </p>
+    <p class="text-white/80 text-lg mt-4">
+      Whether I'm designing a dynamic UI or debugging logic behind an ML model, I enjoy solving problems with equal parts creativity and precision.
+      I love collaborating on meaningful projects, contributing to open-source communities, and pushing myself to grow as a developer.
+    </p>
+    <p class="text-white/80 text-lg mt-4">
+      I’m currently seeking opportunities that allow me to apply and deepen my skills while making an impact in real-world applications.
+      One of my greatest motivations for pursuing CS is that it lets me blend logic with imagination — building applications that are both functional and expressive.
+    </p>
+    <p class="text-white text-lg mt-4 font-semibold">
+      Always looking forward to opportunities that allow me to learn, grow and contribute to innovative projects!
+    </p>
+    <div class="mt-10 grid grid-cols-1 sm:grid-cols-2 gap-4 text-white text-base">
+      <div>🔴 <strong>Degree:</strong> B.S in Computer Science at Arizona State University (Junior)</div>
+      <div>🟠 <strong>Currently Learning:</strong> Machine Learning, C++, Java</div>
+      <div>🟡 <strong>Tech Stack:</strong> Python, C, C++, Java, MATLAB, SQL, HTML, CSS, GitHub, Excel, Visual Studio</div>
+      <div>🟢 <strong>Interests:</strong> Machine Learning, AI, UI/UX</div>
+      <div>🔵 <strong>Contact:</strong> <a href="mailto:nbahirgo@asu.edu" class="underline text-blue-200">nbahirgo@asu.edu</a></div>
+      <div>⚪ <strong>Pronouns:</strong> She/Her</div>
+    </div>
+  </section>
+
+  <!-- Fun Facts Section -->
+  <section id="fun-facts" class="py-16 px-6 max-w-4xl mx-auto animate-fade-up section-box mt-12">
+    <h3 class="text-3xl font-bold text-white mb-6"> Who Am I? Let's Keep It Real</h3>
+    <p class="text-white/90 text-lg mb-6">
+      Hey! I’m someone who’s <strong>constantly curious</strong> — if something moves, makes noise, or lights up, chances are I’ve already wondered <em>how it works</em>.
+      Blame it on growing up around a mechanical engineer dad — I’ve picked up more mechanical terms from his phone calls than any textbook ever taught me.
+     
+    </p>
+    <ul class="list-disc list-inside space-y-2 text-white/80 text-base">
+      <li> Jamming on the guitar or piano</li>
+      <li> Learning to play drums (loudly and proudly)</li>
+      <li> Singing like nobody’s watching (except maybe my dog)</li>
+      <li> Shooting hoops when I feel sporty</li>
+      <li> Going on bike or car rides because adventure is therapy</li>
+      <li> Dreaming of the next place I’ll travel to</li>
+      <li> And yes, technically I'm <em>always</em> free (or at least free enough to pretend)</li>
+    </ul>
+    <p class="text-white mt-6 font-semibold">
+      TL;DR: I'm an energetic, curious, slightly chaotic mix of a coder, creative, and somewhat driven towards Music. 
+    </p>
+  </section>
+
+  <!-- Experience Section -->
+  <!-- Experience Section -->
+<section id="experience" class="py-16 px-6 max-w-4xl mx-auto animate-fade-up section-box mt-12">
+    <h3 class="text-3xl font-bold text-white mb-10">Experience</h3>
+  
+    <!-- Maxgen Technologies Internship -->
+    <div class="mb-10">
+      <p class="text-lg text-white font-semibold mb-4">
+        Software Engineering Intern – Maxgen Technologies, Pune (May 2024 – July 2024)
+      </p>
+      <ul class="list-disc list-outside pl-6 text-white/90 space-y-2">
+        <li>Worked on developing internal tools using Python and React.</li>
+        <li>Optimized backend queries, improving load time by 30%.</li>
+        <li>Collected, cleaned, and preprocessed datasets using Pandas and NumPy to support data-driven decision-making.</li>
+        <li>Performed exploratory data analysis (EDA) using Matplotlib and Seaborn to identify trends and patterns.</li>
+        <li>Built visual dashboards and graphs for internal reporting using Plotly and Matplotlib.</li>
+      </ul>
+    </div>
+  
+    <!-- Sur Devils Outreach Lead -->
+    <div class="mb-10">
+      <p class="text-lg text-white font-semibold mb-4">
+        Technical Outreach Lead – Sur Devils, ASU (Jan 2025 – Present)
+      </p>
+      <ul class="list-disc list-outside pl-6 text-white/90 space-y-2">
+        <li>Led outreach campaigns and built automated RSVP and tracking tools for music club activities.</li>
+        <li>Made flyers, posters, and social media announcements about upcoming events.</li>
+        <li>Collaborated with other clubs and organizations at ASU for student body engagement.</li>
+      </ul>
+    </div>
+  
+    <!-- Mahindra CIE Internship -->
+    <div>
+      <p class="text-lg text-white font-semibold mb-4">
+        Administrative Assistant – Mahindra CIE, Pune (May 2023 – Aug 2023)
+      </p>
+      <ul class="list-disc list-outside pl-6 text-white/90 space-y-2">
+        <li>Provided technical support and training for students and staff, enhancing the effectiveness of educational technologies.</li>
+        <li>Greeted and directed guests, maintained the visitor log, and communicated effectively with a diverse community via email, phone, and in-person meetings.</li>
+        <li>Tracked and reconciled office supply inventory bi-weekly and assisted with event setup, cleanup, and organization.</li>
+        <li>Gained hands-on experience with the ERP system of a leading automotive and magnetic processing company.</li>
+      </ul>
+    </div>
+  </section>
+  
+  <!-- Projects Section -->
+<section id="projects" class="py-16 px-6 max-w-4xl mx-auto animate-fade-up section-box mt-12">
+    <h3 class="text-3xl font-bold text-white mb-6">Projects</h3>
+  
+    <!-- SkillSwap -->
+    <div class="mb-6">
+      <h4 class="text-xl font-semibold text-white">SkillSwap</h4>
+      <ul class="list-disc list-inside text-white/90 space-y-2 mt-2">
+        <li>Developed a Flask-based platform for students to exchange skills and collaborate with each other.</li>
+        <li>Implemented user authentication, profile creation, and real-time skill posting.</li>
+        <li>Used HTML, Tailwind CSS for front-end styling and responsiveness.</li>
+        <li>Built back-end logic using Python and SQLite for data storage and matching skills.</li>
+      </ul>
+      
+    </div>
+  
+     <!-- Artificial-Food-Aggregator-Program -->
+  <div class="mb-10">
+    <p class="text-lg text-white font-semibold mb-2">
+      Artificial Food Aggregator Program – ESSENS  
+    </p>
+    <ul class="list-disc list-inside text-white/90 space-y-2">
+      <li>Developed a restaurant aggregator and food delivery simulator using Python.</li>
+      <li>Used <strong>Pandas, Matplotlib</strong>, and <strong>NumPy</strong> to manage data and visualize trends.</li>
+      <li>Orders are processed and exported as <strong>CSV files</strong>, including all itemized billing and discounts.</li>
+      <li>Simulated menus for fictitious restaurants; allowed users to place combined orders across outlets.</li>
+      <li>Incorporated a system of discounts, offers, and order-based perks for customer engagement.</li>
+      <li>Ran on systems with 4–8 GB RAM and developed using <strong>Python IDLE 3.10</strong> and <strong>Windows 11</strong>.</li>
+      <li>Final deliverables included order summaries in CSV and documentation in MS Word.</li>
+    </ul>
+  </div>
+  
+    <!-- Music Recommender -->
+<div class="mb-6">
+    <h4 class="text-xl font-semibold text-white"> Mood-Based Music Recommender</h4>
+    <ul class="list-disc list-inside text-white/90 mt-2 space-y-2">
+      <li>Developed a machine learning-based system to recommend music based on user mood detected via facial expressions or manually typed emotions.</li>
+      <li>Used <strong>OpenCV</strong> for real-time face detection and expression recognition.</li>
+      <li>Trained a mood classification model to recognize emotions like happy, sad, angry, and neutral.</li>
+      <li>Integrated <strong>Spotify API</strong> to fetch mood-specific playlists and track previews dynamically.</li>
+      <li>Provided fallback UI for mood text input in case camera was unavailable or permission denied.</li>
+      <li>Implemented in <strong>Python</strong> using libraries like NumPy, OpenCV, and Spotipy (Spotify wrapper).</li>
+      <li>Improved user experience with clear feedback, track previews, and retry options for emotion detection.</li>
+    </ul>
+  </div>
+  
+  
+    <!-- Portfolio Website -->
+    <div>
+      <h4 class="text-xl font-semibold text-white">This Portfolio</h4>
+      <p class="text-white/90 mt-2">
+     <li>Designed and developed my personal portfolio from scratch using Tailwind CSS, JavaScript, and HTML.</li>   
+     <li>Features dark mode toggle, animations, and a music-tech aesthetic.</li>
+      </p>
+    </div>
+  </section>
+  
+  
+  
+  
+  <!-- Activities Section -->
+  <section id="activities" class="py-16 px-6 max-w-4xl mx-auto animate-fade-up section-box mt-12">
+    <h3 class="text-3xl font-bold text-white mb-4">Activities</h3>
+    <ul class="list-disc list-inside text-white/80 space-y-2">
+      <li>Performed live guitar & vocals for various events and clubs across campus</li>
+      <li>Composed music for showcase attended by Mrs. Smriti Irani and President Michael Crow</li>
+      <li>Was the basketball captain for U-19 Girls team</li>
+      <li>Trinity College of London Certificate in piano</li>
+    </ul>
+  </section>
+
+  
+  
+  
+  
+  <!-- Campus Involvement Section -->
+<section id="campus" class="py-16 px-6 max-w-4xl mx-auto animate-fade-up section-box mt-12">
+    <h3 class="text-3xl font-bold text-white mb-6">Campus Involvement</h3>
+  
+    <!-- Sur Devils Music Club -->
+    <div class="mb-8">
+      <h4 class="text-xl font-semibold text-white"> Sur Devils Music Club – Outreach & PR Lead</h4>
+      <ul class="list-disc list-inside text-white/90 mt-2 space-y-2">
+        <li>Led outreach and promotions for ASU’s premier Indian fusion music club.</li>
+        <li>Designed posters, managed Instagram & PR activities, and collaborated with other campus organizations.</li>
+        <li>Organized and emceed musical events, performances, and showcases across campus.</li>
+      </ul>
+    </div>
+  
+    <!-- Member of Devlabs -->
+    <div class="mb-8">
+      <h4 class="text-xl font-semibold text-white">Member of Devlabs</h4>
+      <ul class="list-disc list-inside text-white/90 mt-2 space-y-2">
+        <li>Involved with Devlabs as a member by participating in coding events and hackathons. </li>
+      </ul>
+    </div>
+  
+    <!-- Event Support & Tablings -->
+    <div>
+      <h4 class="text-xl font-semibold text-white">Event Participation & Tablings</h4>
+      <ul class="list-disc list-inside text-white/90 mt-2 space-y-2">
+        <li>Regularly participated in tabling events, promoting club activities to new students.</li>
+        <li>Helped organize Welcome Week booths, workshops, and club fair presentations.</li>
+      </ul>
+    </div>
+  </section>
+  
+
+
+
+
+  <!-- Contact Section -->
+  <section id="contact" class="py-16 px-6 max-w-4xl mx-auto animate-fade-up section-box mt-12 mb-10">
+    <h3 class="text-3xl font-bold text-white mb-4">Contact</h3>
+    <p class="text-white/80 mb-4">
+      Feel free to reach out for collaboration, projects, or just to say hi! 💬
+    </p>
+    <ul class="text-blue-200 space-y-2">
+      <li>Email: <a href="mailto:nbahirgo@asu.edu" class="underline">nbahirgo@asu.edu</a></li>
+      <li>LinkedIn: <a href="https://linkedin.com/in/nandinibahirgonde" class="underline" target="_blank">linkedin.com/in/nandinibahirgonde</a></li>
+      <li>GitHub: <a href="https://github.com/NandiniBahirgonde" class="underline" target="_blank">github.com/NandiniBahirgonde</a></li>
+    </ul>
+  </section>
+
+  <!-- Footer -->
+  <footer class="text-center py-6 text-sm text-white/60">
+    &copy; 2025 Nandini Bahirgonde. Made with 💙
+  </footer>
+
+  <!-- Dark Mode Toggle -->
+  <script>
+    const toggle = document.getElementById("toggleDark");
+    const html = document.documentElement;
+
+    toggle.addEventListener("click", () => {
+      html.classList.toggle("dark");
+      localStorage.setItem("theme", html.classList.contains("dark") ? "dark" : "light");
+    });
+
+    if (localStorage.getItem("theme") === "dark") {
+      html.classList.add("dark");
+    }
+  </script>
+
+<script>
+    let lastScrollTop = 0;
+    const header = document.querySelector("header");
+  
+    window.addEventListener("scroll", function () {
+      const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+  
+      if (currentScroll > lastScrollTop) {
+        // Scrolling down — hide navbar
+        header.style.transform = "translateY(-100%)";
+      } else {
+        // Scrolling up — show navbar
+        header.style.transform = "translateY(0)";
+      }
+  
+      lastScrollTop = currentScroll <= 0 ? 0 : currentScroll; // For Safari
+    });
+  </script>
+  
+</body>
+</html>
