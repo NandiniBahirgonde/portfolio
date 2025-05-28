@@ -32,7 +32,7 @@ The project is deployed using [Netlify](https://netlify.com). For deployment, th
 
 ## Contact
 
-For any inquiries or collaborations, please reach out via:
+
 
 - Email: nbahirgo@asu.edu
 - LinkedIn: [linkedin.com/in/nandinibahirgonde](https://linkedin.com/in/nandinibahirgonde)
