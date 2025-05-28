@@ -5,7 +5,6 @@ This repository contains the source code for my personal portfolio website. The 
 ## Live Website
 
 View the live portfolio at: https://nandinibahirgonde.netlify.app/
-
 ## Description
 
 The portfolio is developed as a single-page static website. It is fully responsive and includes both light and dark themes. The interface is styled with a minimal, modern design using Tailwind CSS. The objective is to provide a clear overview of my professional profile and technical competencies.
