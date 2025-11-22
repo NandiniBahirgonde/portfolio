@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Projects | Nandini Bahirgonde</title>
+
+  <!-- Tailwind CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet" />
+
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      font-size: 17px;
+      background: linear-gradient(to bottom right, #001f3f, #005f73, #0a9396);
+      color: white;
+      transition: background 0.1s ease;
+      min-height: 100vh;
+    }
+
+    html.dark body {
+      background: linear-gradient(to bottom, #000000 0%, #222222 40%);
+    }
+
+    .section-box {
+      background-color: rgba(13, 30, 59, 0.219);
+      backdrop-filter: blur(10px);
+      border-radius: 20px;
+      padding: 2rem;
+    }
+
+    /* Flip Card Styles */
+    .flip-card {
+      background-color: transparent;
+      width: 100%;
+      height: 350px;
+      perspective: 1000px;
+    }
+
+    .flip-card-inner {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      text-align: center;
+      transition: transform 0.6s;
+      transform-style: preserve-3d;
+    }
+
+    .flip-card:hover .flip-card-inner {
+      transform: rotateY(180deg);
+    }
+
+    .flip-card-front, .flip-card-back {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      backface-visibility: hidden;
+      border-radius: 15px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+    }
+
+    .flip-card-front {
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      border: 2px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .flip-card-back {
+      background: linear-gradient(135deg, #005f73 0%, #0a9396 50%, #001f3f 100%);
+      transform: rotateY(180deg);
+      overflow-y: auto;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    .animate-fade-in {
+      animation: fadeIn 1s ease-in-out both;
+    }
+  </style>
+</head>
+
+<body class="transition duration-300 ease-in-out">
+
+  <!-- Navbar -->
+  <header class="sticky top-0 bg-opacity-90 backdrop-blur-md shadow z-50 dark:bg-gray-900 dark:text-white transition">
+    <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+      <h1 class="text-2xl font-bold text-white">
+        <a href="index.html">Nandini Bahirgonde</a>
+      </h1>
+      <nav class="space-x-6 text-sm font-semibold">
+        <a href="index.html" class="hover:text-blue-300">Home</a>
+        <a href="projects.html" class="hover:text-blue-300">Projects</a>
+        <a href="activities.html" class="hover:text-blue-300">Activities</a>
+        <a href="contact.html" class="hover:text-blue-300">Contact</a>
+        <button id="toggleDark" class="ml-4 bg-white text-black dark:bg-gray-700 dark:text-white px-2 py-1 rounded text-xs hover:scale-105 transition">🌙</button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Projects Section -->
+  <section class="py-16 px-6 max-w-6xl mx-auto animate-fade-in">
+    <div class="section-box">
+      <h2 class="text-4xl font-bold text-white mb-10 text-center">My Projects</h2>
+      
+      <!-- Projects Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        
+        <!-- Project 1: Smart Inventory Optimization Tool -->
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <div>
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python" class="w-24 h-24 mx-auto mb-4"/>
+                <h3 class="text-xl font-bold text-white">Smart Inventory Optimization Tool</h3>
+                <p class="text-sm text-white/70 mt-2">ML + Operations Analytics</p>
+              </div>
+            </div>
+            <div class="flip-card-back">
+              <div class="text-white text-left">
+                <h3 class="text-xl font-bold mb-3">Smart Inventory Optimization</h3>
+                <p class="text-sm mb-3"><strong>Tech Stack:</strong> Python, Pandas, Prophet/ARIMA, React/HTML dashboard</p>
+                <p class="text-sm mb-2"><strong>Features:</strong></p>
+                <ul class="text-sm space-y-1 list-disc list-inside">
+                  <li>Forecast demand for products</li>
+                  <li>Suggest optimal reorder points (EOQ model)</li>
+                  <li>Visual charts + downloadable reports</li>
+                </ul>
+                <p class="text-sm mt-3"><strong>Perfect for:</strong> Retail, supply chain, operations roles</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 2: Personal Finance AI Advisor -->
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <div>
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python" class="w-24 h-24 mx-auto mb-4"/>
+                <h3 class="text-xl font-bold text-white">Personal Finance AI Advisor</h3>
+                <p class="text-sm text-white/70 mt-2">ML + CS + Business</p>
+              </div>
+            </div>
+            <div class="flip-card-back">
+              <div class="text-white text-left">
+                <h3 class="text-xl font-bold mb-3">Personal Finance AI Advisor</h3>
+                <p class="text-sm mb-3"><strong>Tech Stack:</strong> Python, ML, Web Frontend</p>
+                <p class="text-sm mb-2"><strong>Features:</strong></p>
+                <ul class="text-sm space-y-1 list-disc list-inside">
+                  <li>Categorizes expenses via NLP</li>
+                  <li>Predicts monthly spending</li>
+                  <li>Gives budgeting recommendations</li>
+                  <li>Shows graphs, trends, savings insights</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 3: MiniPy Interpreter -->
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <div>
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python" class="w-24 h-24 mx-auto mb-4"/>
+                <h3 class="text-xl font-bold text-white">MiniPy: A Tiny Python-Inspired Interpreter</h3>
+                <p class="text-sm text-white/70 mt-2">Language Design Project</p>
+              </div>
+            </div>
+            <div class="flip-card-back">
+              <div class="text-white text-left">
+                <h3 class="text-xl font-bold mb-3">MiniPy Interpreter</h3>
+                <p class="text-sm mb-3"><strong>Tech Stack:</strong> Python 3, argparse, unittest, PyInstaller</p>
+                <p class="text-sm mb-2"><strong>What It Does:</strong></p>
+                <ul class="text-sm space-y-1 list-disc list-inside">
+                  <li>Interprets a Python-like language with variables, arithmetic, conditionals, and loops</li>
+                  <li>Reads .mpy files and executes them</li>
+                  <li>Supports print statements and custom functions</li>
+                </ul>
+                <p class="text-sm mt-2"><strong>Key Features:</strong> Lexer, Parser, AST, Interpreter, Runtime environment, Error handling</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="text-center py-6 text-sm text-white/60 mt-12">
+    &copy; 2025 Nandini Bahirgonde. 
+  </footer>
+
+  <!-- Dark Mode Toggle -->
+  <script>
+    const toggle = document.getElementById("toggleDark");
+    const html = document.documentElement;
+
+    toggle.addEventListener("click", () => {
+      html.classList.toggle("dark");
+      localStorage.setItem("theme", html.classList.contains("dark") ? "dark" : "light");
+    });
+
+    if (localStorage.getItem("theme") === "dark") {
+      html.classList.add("dark");
+    }
+  </script>
+
+</body>
+</html>

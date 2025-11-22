@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact | Nandini Bahirgonde</title>
+
+  <!-- Tailwind CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet" />
+
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      font-size: 17px;
+      background: linear-gradient(to bottom right, #001f3f, #005f73, #0a9396);
+      color: white;
+      transition: background 0.1s ease;
+      min-height: 100vh;
+    }
+
+    html.dark body {
+      background: linear-gradient(to bottom, #000000 0%, #222222 40%);
+    }
+
+    .section-box {
+      background-color: rgba(13, 30, 59, 0.219);
+      backdrop-filter: blur(10px);
+      border-radius: 20px;
+      padding: 2.5rem;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+      transition: all 0.3s ease;
+    }
+
+    .section-box:hover {
+      box-shadow: 0 12px 40px rgba(0, 123, 255, 0.2);
+      transform: translateY(-2px);
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .animate-fade-in {
+      animation: fadeIn 1s ease-in-out both;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-10px); }
+    }
+
+    .floating {
+      animation: float 3s ease-in-out infinite;
+    }
+
+    .form-input {
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.15));
+      border: 2px solid rgba(255, 255, 255, 0.2);
+      color: white;
+      padding: 1rem;
+      border-radius: 12px;
+      width: 100%;
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      backdrop-filter: blur(10px);
+      font-size: 16px;
+    }
+
+    .form-input:focus {
+      outline: none;
+      border-color: rgba(59, 130, 246, 0.8);
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.2));
+      box-shadow: 0 0 20px rgba(59, 130, 246, 0.4), 0 0 40px rgba(59, 130, 246, 0.2);
+      transform: scale(1.02);
+    }
+
+    .form-input::placeholder {
+      color: rgba(255, 255, 255, 0.6);
+    }
+
+    textarea.form-input {
+      resize: vertical;
+      min-height: 150px;
+    }
+
+    .submit-btn {
+      background: linear-gradient(135deg, #3b82f6, #06b6d4, #8b5cf6);
+      background-size: 200% 200%;
+      color: white;
+      padding: 1rem 3rem;
+      border-radius: 12px;
+      font-weight: 700;
+      font-size: 18px;
+      transition: all 0.4s ease;
+      border: none;
+      cursor: pointer;
+      box-shadow: 0 10px 30px rgba(59, 130, 246, 0.3);
+      animation: gradientShift 3s ease infinite;
+      position: relative;
+      overflow: hidden;
+    }
+
+    @keyframes gradientShift {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    .submit-btn::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+      transition: left 0.5s;
+    }
+
+    .submit-btn:hover::before {
+      left: 100%;
+    }
+
+    .submit-btn:hover {
+      transform: translateY(-5px) scale(1.05);
+      box-shadow: 0 15px 40px rgba(59, 130, 246, 0.5);
+    }
+
+    .submit-btn:active {
+      transform: translateY(-2px) scale(1.02);
+    }
+
+    label {
+      display: block;
+      margin-bottom: 0.75rem;
+      font-weight: 600;
+      font-size: 1.1rem;
+      color: rgba(255, 255, 255, 0.95);
+      letter-spacing: 0.5px;
+    }
+
+    .contact-icon {
+      display: inline-block;
+      padding: 0.5rem;
+      background: linear-gradient(135deg, rgba(59, 130, 246, 0.2), rgba(139, 92, 246, 0.2));
+      border-radius: 10px;
+      margin-right: 0.75rem;
+      transition: all 0.3s ease;
+    }
+
+    .contact-link:hover .contact-icon {
+      transform: scale(1.2) rotate(5deg);
+      background: linear-gradient(135deg, rgba(59, 130, 246, 0.4), rgba(139, 92, 246, 0.4));
+    }
+
+    .contact-link {
+      display: flex;
+      align-items: center;
+      padding: 1rem;
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 12px;
+      transition: all 0.3s ease;
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .contact-link:hover {
+      background: rgba(255, 255, 255, 0.1);
+      transform: translateX(10px);
+      border-color: rgba(59, 130, 246, 0.5);
+    }
+
+    .glow-text {
+      text-shadow: 0 0 10px rgba(59, 130, 246, 0.5), 0 0 20px rgba(59, 130, 246, 0.3);
+    }
+
+    .divider {
+      height: 2px;
+      background: linear-gradient(90deg, transparent, rgba(59, 130, 246, 0.5), transparent);
+      margin: 2rem 0;
+      border-radius: 2px;
+    }
+  </style>
+</head>
+
+<body class="transition duration-300 ease-in-out">
+
+  <!-- Navbar -->
+  <header class="sticky top-0 bg-opacity-90 backdrop-blur-md shadow z-50 dark:bg-gray-900 dark:text-white transition">
+    <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+      <h1 class="text-2xl font-bold text-white">
+        <a href="index.html">Nandini Bahirgonde</a>
+      </h1>
+      <nav class="space-x-6 text-sm font-semibold">
+        <a href="index.html" class="hover:text-blue-300">Home</a>
+        <a href="projects.html" class="hover:text-blue-300">Projects</a>
+        <a href="activities.html" class="hover:text-blue-300">Activities</a>
+        <a href="contact.html" class="hover:text-blue-300">Contact</a>
+        <button id="toggleDark" class="ml-4 bg-white text-black dark:bg-gray-700 dark:text-white px-2 py-1 rounded text-xs hover:scale-105 transition">🌙</button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Contact Form Section -->
+  <section class="py-16 px-6 max-w-3xl mx-auto animate-fade-in">
+    <div class="section-box">
+      <h2 class="text-5xl font-bold text-white mb-4 text-center glow-text floating">Let's Connect! </h2>
+      <p class="text-white/90 text-center mb-10 text-lg">
+        I'd love to hear from you! Whether it's about a project, collaboration, or just to say hi, drop me a message below.
+      </p>
+
+      <form id="contactForm" class="space-y-7">
+        <!-- Name -->
+        <div>
+          <label for="name" class="text-white">Your Name </label>
+          <input 
+            type="text" 
+            id="name" 
+            name="name" 
+            class="form-input" 
+            placeholder="Enter your full name" 
+            required
+          />
+        </div>
+
+        <!-- Email -->
+        <div>
+          <label for="email" class="text-white">Your Email </label>
+          <input 
+            type="email" 
+            id="email" 
+            name="email" 
+            class="form-input" 
+            placeholder="your.email@example.com" 
+            required
+          />
+        </div>
+
+        <!-- Fun Fact -->
+        <div>
+          <label for="funfact" class="text-white">A Fun Fact About You </label>
+          <input 
+            type="text" 
+            id="funfact" 
+            name="funfact" 
+            class="form-input" 
+            placeholder="Tell me something interesting about yourself!" 
+            required
+          />
+        </div>
+
+        <!-- Message -->
+        <div>
+          <label for="message" class="text-white">Your Message </label>
+          <textarea 
+            id="message" 
+            name="message" 
+            class="form-input" 
+            placeholder="Let me know why you're reaching out, project idea, question, collaboration, or just to connect!"
+            required
+          ></textarea>
+        </div>
+
+        <!-- Submit Button -->
+        <div class="text-center pt-4">
+          <button type="submit" class="submit-btn">
+            Send Message 🚀
+          </button>
+        </div>
+      </form>
+
+      <!-- Divider -->
+      <div class="divider"></div>
+
+      <!-- Contact Info -->
+      <div class="mt-10">
+        <h3 class="text-3xl font-bold text-white mb-6 text-center glow-text">Other Ways to Reach Me</h3>
+        <div class="space-y-4">
+          <a href="mailto:nbahirgo@asu.edu" class="contact-link">
+            <span class="contact-icon">📧</span>
+            <span class="text-white/90 text-lg">nbahirgo@asu.edu</span>
+          </a>
+          <a href="https://linkedin.com/in/nandinibahirgonde" target="_blank" class="contact-link">
+            <span class="contact-icon">💼</span>
+            <span class="text-white/90 text-lg">linkedin.com/in/nandinibahirgonde</span>
+          </a>
+          <a href="https://github.com/NandiniBahirgonde" target="_blank" class="contact-link">
+            <span class="contact-icon">💻</span>
+            <span class="text-white/90 text-lg">github.com/NandiniBahirgonde</span>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="text-center py-6 text-sm text-white/60 mt-12">
+    &copy; 2025 Nandini Bahirgonde. 
+  </footer>
+
+  <!-- Dark Mode Toggle -->
+  <script>
+    const toggle = document.getElementById("toggleDark");
+    const html = document.documentElement;
+
+    toggle.addEventListener("click", () => {
+      html.classList.toggle("dark");
+      localStorage.setItem("theme", html.classList.contains("dark") ? "dark" : "light");
+    });
+
+    if (localStorage.getItem("theme") === "dark") {
+      html.classList.add("dark");
+    }
+  </script>
+
+  <!-- Form Handling -->
+  <script>
+    document.getElementById('contactForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      const name = document.getElementById('name').value;
+      const email = document.getElementById('email').value;
+      const funfact = document.getElementById('funfact').value;
+      const message = document.getElementById('message').value;
+      
+      // Create mailto link with form data
+      const subject = encodeURIComponent(`Portfolio Contact from ${name}`);
+      const body = encodeURIComponent(
+        `Name: ${name}\n` +
+        `Email: ${email}\n` +
+        `Fun Fact: ${funfact}\n\n` +
+        `Message:\n${message}`
+      );
+      
+      // Open default email client
+      window.location.href = `mailto:nbahirgo@asu.edu?subject=${subject}&body=${body}`;
+      
+      // Optional: Show success message
+      alert('Opening your email client... Please send the pre-filled email to complete your message!');
+    });
+  </script>
+
+</body>
+</html>
