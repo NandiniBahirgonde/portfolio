@@ -1,19 +1,19 @@
-# 🌐 Nandini Bahirgonde — Portfolio Website
+# Nandini Bahirgonde — Portfolio Website
 
 This repository contains the source code for my personal portfolio website, built to showcase my academic background, technical skills, projects, and professional experience as a Computer Science student.
 
-🔗 **Live Website:**  
+**Live Website:**  
 https://nandinibahirgonde.github.io/portfolio
 
 ---
 
-## 📌 About the Portfolio
+## About the Portfolio
 
 The portfolio is designed to provide a clear and concise overview of who I am, what I have worked on, and what I am currently learning. It serves as a central place for recruiters and collaborators to explore my work and learn more about my interests in software development, data analytics, and technology.
 
 ---
 
-## 🛠️ Technologies Used
+##  Technologies Used
 
 - **HTML5** – Website structure and content  
 - **CSS3** – Styling and layout  
@@ -23,7 +23,7 @@ The portfolio is designed to provide a clear and concise overview of who I am, w
 
 ---
 
-## 📂 Website Structure
+##  Website Structure
 
 ```text
 portfolio/
