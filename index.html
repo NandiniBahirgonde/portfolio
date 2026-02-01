@@ -1,383 +1,302 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="light">
+<html lang="en" class="scroll-smooth">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Nandini Bahirgonde | Portfolio</title>
-
-  <!-- Tailwind CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
+  <title>Nandini Prashant Bahirgonde | Portfolio</title>
+  <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet" />
-
-  <style>
-    html {
-      scroll-behavior: smooth;
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            cosmic: { cyan: '#00d2ff', purple: '#9d50bb', dark: '#0f0c29' }
+          }
+        }
+      }
     }
-
-    body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-    font-size: 17px;
-    background: linear-gradient(to bottom right, #001f3f, #005f73, #0a9396, );
-    color: white;
-    transition: background 0.1s ease;
-    }
-
-    html.dark body {
-      background: linear-gradient(to bottom, #000000 0%, #222222 40%);
-      
-    }
-
-    #navbar {
-      transition: transform 2s ease-in-out;
-      transform: translateY(0);
-      background-color: rgba(36, 51, 154, 0.272);
-    }
-
-    .section-box {
-      background-color: rgba(13, 30, 59, 0.219);
-      backdrop-filter: blur(10px);
-      border-radius: 20px;
-      padding: 2rem;
-      margin-top: 100px; /* prevent overlap under fixed navbar */
-    }
-
-    @keyframes fadeout {
-      from { opacity: 0; }
-      to { opacity: 1; }
-    }
-
-    .animate-fade-in {
-      animation: fadeIn 1s ease-in-out both;
-    }
-
-    @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(30px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    .animate-fade-up {
-      animation: fadeUp 0.8s ease-out both;
-    }
-
-    .floating-button {
-      transition: transform 0.3s ease;
-    }
-
-    .floating-button:hover {
-      transform: translateY(-3px);
-    }
-
-    .glow-border {
-      box-shadow: 0 0 8px rgba(0, 123, 255, 0.4);
-    }
-
-    .glow-border:hover {
-      box-shadow: 0 0 15px rgba(0, 123, 255, 0.7);
-    }
-    /* Add this to your existing <style> tag in <head> */
-    header {
-  transition: transform 0.3s ease;
-}
-
-.hide-navbar {
-  transform: translateY(-100%);
-}
-
-  </style>
+  </script>
 </head>
+<body class="antialiased selection:bg-cosmic-cyan selection:text-black">
 
-<body class="transition duration-300 ease-in-out">
+  <div id="star-container" class="stars"></div>
 
-  <!-- Navbar -->
-  <header class="sticky top-0 bg-opacity-90 backdrop-blur-md shadow z-50 dark:bg-gray-900 dark:text-white transition">
-    <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
-      <h1 class="text-2xl font-bold text-white">
-         Nandini Bahirgonde
-      </h1>
-      <nav class="space-x-6 text-sm font-semibold">
-        <a href="#profile-intro" class="hover:text-blue-300">About</a>
-        <a href="#fun-facts" class="hover:text-blue-300">BeReal</a>
-        <a href="#experience" class="hover:text-blue-300">Experience</a>
-        <a href="activities.html" target="_blank" class="hover:text-blue-300">Activities</a>
-        <a href="#campus" class="hover:text-blue-300">Campus Involvement</a>
-        <a href="projects.html" target="_blank" class="hover:text-blue-300">Projects</a>
-        <a href="contact.html" target="_blank" class="hover:text-blue-300">Contact</a>
-        
-        <button id="toggleDark" class="ml-4 bg-white text-black dark:bg-gray-700 dark:text-white px-2 py-1 rounded text-xs hover:scale-105 transition">🌙</button>
-      </nav>
+  <nav class="fixed w-full z-50 top-0 bg-black/40 backdrop-blur-md border-b border-white/5">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+      <a href="#" class="text-xl font-bold tracking-wide hover:text-cosmic-cyan transition">
+        Nandini Prashant Bahirgonde<span class="text-cosmic-cyan">.</span>
+      </a>
+      <div class="hidden md:flex space-x-8 text-sm font-medium text-gray-300">
+        <a href="#about" class="hover:text-cosmic-cyan transition">About</a>
+        <a href="#projects" class="hover:text-cosmic-cyan transition">Projects</a>
+        <a href="#experience" class="hover:text-cosmic-cyan transition">Experience</a>
+        <a href="activities.html" class="hover:text-cosmic-cyan transition">Activities</a>
+      </div>
+      <a href="contact.html" class="px-5 py-2 rounded-full border border-cosmic-cyan text-cosmic-cyan text-sm font-bold hover:bg-cosmic-cyan hover:text-black transition shadow-[0_0_15px_rgba(0,210,255,0.3)]">
+        Signal Me <i class="fas fa-satellite-dish ml-2"></i>
+      </a>
     </div>
-  </header>
+  </nav>
 
-  <!-- Hero -->
-<section class="py-20 px-6 animate-fade-in section-box max-w-6xl mx-auto mt-8 flex flex-col md:flex-row items-center justify-between">
-    <!-- Text Column -->
-    <div class="md:w-1/2 text-center md:text-left">
-      <h2 class="text-4xl sm:text-5xl font-bold mb-4 text-white">Hi, I'm Nandini Bahirgonde </h2>
-      <p class="text-lg text-white/80 max-w-xl mx-auto md:mx-0">
-        Computer Science undergrad at ASU | Aspiring Intern for Summer 2026 | Coder | Musician
-      </p>
-      <div class="mt-6">
-        <a href="./assets/NandiniB-Resume.pdf" download
-           class="floating-button glow-border bg-gradient-to-r from-blue-500 to-cyan-500 text-white font-semibold px-6 py-3 rounded-lg shadow-lg hover:scale-105 transition duration-300 ease-in-out">
-          Download Resume
-        </a>
+  <section id="about" class="min-h-screen flex items-center relative pt-20 px-6 overflow-hidden">
+    <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
+      
+      <div class="z-10 animate-fade-in-up">
+        <div class="pixel-font text-xs text-cosmic-cyan mb-4 tracking-widest">
+          <i class="fas fa-gamepad"></i> LEVEL 3 STUDENT
+        </div>
+        <h1 class="text-5xl md:text-7xl font-extrabold leading-tight mb-6">
+          Exploring the <br>
+          <span class="text-transparent bg-clip-text bg-gradient-to-r from-cosmic-cyan to-purple-500"> Cosmos.</span>
+        </h1>
+        
+        <div class="glass-panel p-6 mb-8 border-l-4 border-l-purple-500">
+          <p class="text-gray-300 leading-relaxed text-sm md:text-base mb-4">
+            Hi, I'm <strong>Nandini Prashant Bahirgonde</strong>.
+          </p>
+          <p class="text-gray-300 leading-relaxed text-sm md:text-base">
+         
+I'm a junior majoring in Computer Science at Arizona State University, with a passion for building technology that's thoughtful, scalable, and human-centered. My academic and personal projects reflect a deep interest in the intersection of web development, machine learning, and user experience design. Over the years, I've taken a hands-on approach to learning — diving into front-end tools like React and Tailwind CSS, strengthening my backend fundamentals, and exploring the possibilities of intelligent systems through Python and AI frameworks.
+
+Whether I'm designing a dynamic UI or debugging logic behind an ML model, I enjoy solving problems with equal parts creativity and precision. I love collaborating on meaningful projects, contributing to open-source communities, and pushing myself to grow as a developer.
+
+I'm currently seeking opportunities that allow me to apply and deepen my skills while making an impact in real-world applications. One of my greatest motivations for pursuing CS is that it lets me blend logic with imagination — building applications that are both functional and expressive.
+
+Always looking forward to opportunities that allow me to learn, grow and contribute to innovative projects!
+          </p>
+          <br>
+          <p class="text-white font-medium text-sm md:text-base">
+            Currently seeking a <strong>Technical Operations Internship</strong> to apply engineering, analytics, and process improvement skills in a safety-focused environment.
+          </p>
+        </div>
+        
+        <div class="flex flex-wrap gap-4">
+          <a href="./Nandini B.-Technical Resume.pdf" download class="px-8 py-3 bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg font-bold hover:scale-105 transition shadow-lg shadow-purple-500/30 flex items-center gap-2">
+            <i class="fas fa-download"></i> Download Resume
+          </a>
+          <a href="#skills" class="px-8 py-3 bg-white/5 border border-white/10 rounded-lg font-semibold hover:bg-white/10 transition">
+            View Skills
+          </a>
+        </div>
+      </div>
+
+      <div class="relative flex justify-center">
+        <div class="absolute w-[500px] h-[500px] border border-white/5 rounded-full animate-[spin_10s_linear_infinite]"></div>
+        <div class="absolute w-[400px] h-[400px] border border-white/10 rounded-full animate-[spin_15s_linear_infinite_reverse]"></div>
+        
+        <div class="relative z-10 w-80 h-80 rounded-full p-1 bg-gradient-to-b from-cosmic-cyan to-purple-600">
+          <img src="profile.png" alt="Nandini Prashant Bahirgonde" class="w-full h-full object-cover rounded-full border-4 border-black" />
+        </div>
+
+        <div class="absolute top-0 right-10 p-3 bg-black/80 rounded-lg border border-purple-500 text-purple-400 text-2xl shadow-[0_0_15px_#9d50bb]">
+          <i class="fas fa-database"></i>
+        </div>
+        <div class="absolute bottom-10 left-0 p-3 bg-black/80 rounded-lg border border-cosmic-cyan text-cosmic-cyan text-2xl shadow-[0_0_15px_#00d2ff]">
+          <i class="fas fa-code"></i>
+        </div>
       </div>
     </div>
-  
-    <!-- Image Column -->
-    <div class="md:w-1/2 mt-10 md:mt-0 flex justify-center">
-        <img src="./profile.png" alt="Nandini Bahirgonde"
-        class="w-48 h-48 md:w-64 md:h-64 rounded-full object-cover shadow-lg border-4 border-white dark:border-gray-700 transition duration-300" />
-</div>   
   </section>
-  
 
-  <section class="px-6 max-w-6xl mx-auto mt-6 flex flex-col lg:flex-row gap-8 animate-fade-up">
-  <!-- Buttons List -->
-  <div class="w-full lg:w-1/4 space-y-4">
-    <a href="#related-coursework" class="block bg-blue-600 text-white text-center py-3 px-4 rounded-lg font-semibold hover:bg-blue-700 transition">
-      Related Coursework
-    </a>
-    <a href="#education" class="block bg-blue-600 text-white text-center py-3 px-4 rounded-lg font-semibold hover:bg-blue-700 transition">
-      Education
-    </a>
-    <a href="#skills" class="block bg-blue-600 text-white text-center py-3 px-4 rounded-lg font-semibold hover:bg-blue-700 transition">
-      Skills
-    </a>
-  </div>
-
-  <!-- Spacer -->
-  <div class="w-full lg:w-3/4"></div>
-</section>
-
-
-
-
-
-  <!-- Profile Introduction -->
-  <section id="profile-intro" class="py-16 px-6 max-w-4xl mx-auto animate-fade-up section-box mt-12">
-    <h3 class="text-3xl font-bold text-white mb-6"> Hi! I'm Nandini Bahirgonde.</h3>
-    <p class="text-white/90 text-lg leading-relaxed">
-      I'm a junior majoring in Computer Science at Arizona State University, with a passion for building technology that's thoughtful, scalable, and human-centered.
-      My academic and personal projects reflect a deep interest in the intersection of web development, machine learning, and user experience design.
-      Over the years, I've taken a hands-on approach to learning — diving into front-end tools like <strong>React</strong> and <strong>Tailwind CSS</strong>, strengthening my backend fundamentals, and exploring the possibilities of intelligent systems through <strong>Python</strong> and AI frameworks.
-    </p>
-    <p class="text-white/80 text-lg mt-4">
-      Whether I'm designing a dynamic UI or debugging logic behind an ML model, I enjoy solving problems with equal parts creativity and precision.
-      I love collaborating on meaningful projects, contributing to open-source communities, and pushing myself to grow as a developer.
-    </p>
-    <p class="text-white/80 text-lg mt-4">
-      I'm currently seeking opportunities that allow me to apply and deepen my skills while making an impact in real-world applications.
-      One of my greatest motivations for pursuing CS is that it lets me blend logic with imagination — building applications that are both functional and expressive.
-    </p>
-    <p class="text-white text-lg mt-4 font-semibold">
-      Always looking forward to opportunities that allow me to learn, grow and contribute to innovative projects!
-    </p>
-    <div class="mt-10 grid grid-cols-1 sm:grid-cols-2 gap-4 text-white text-base">
-      <div>🔴 <strong>Degree:</strong> B.S in Computer Science at Arizona State University (Junior)</div>
-      <div>🟠 <strong>Currently Learning:</strong> Machine Learning, C++, Java</div>
-      <div>🟡 <strong>Tech Stack:</strong> Python, C, C++, Java, MATLAB, SQL, HTML, CSS, GitHub, Excel, Visual Studio</div>
-      <div>🟢 <strong>Interests:</strong> Machine Learning, AI, UI/UX</div>
-      <div>🔵 <strong>Contact:</strong> <a href="mailto:nbahirgo@asu.edu" class="underline text-blue-200">nbahirgo@asu.edu</a></div>
-      <div>⚪ <strong>Pronouns:</strong> She/Her</div>
+  <section class="border-y border-white/5 bg-white/5 backdrop-blur-sm relative">
+    <div class="max-w-7xl mx-auto px-6 py-10 grid md:grid-cols-3 gap-8 text-center divide-x divide-white/10">
+      <div>
+        <h3 class="text-xl font-bold text-white mb-1"><i class="fas fa-university text-cosmic-cyan"></i> ASU Engineering</h3>
+        <p class="text-sm text-gray-400">B.S. Computer Science</p>
+        <p class="text-xs text-gray-500 mt-1">Expected May 2027</p>
+      </div>
+      <div>
+        <h3 class="text-xl font-bold text-white mb-1">3.78 GPA</h3>
+        <p class="text-sm text-gray-400">Dean's List Honoree</p>
+        <p class="text-xs text-gray-500 mt-1">High Academic Standing</p>
+      </div>
+      <div>
+        <h3 class="text-xl font-bold text-white mb-1">Certifications</h3>
+        <p class="text-sm text-gray-400">Business Data Analytics</p>
+        <p class="text-xs text-gray-500 mt-1">Data-Driven Decision Making</p>
+      </div>
     </div>
   </section>
 
-  <!-- Fun Facts Section -->
-  <section id="fun-facts" class="py-16 px-6 max-w-4xl mx-auto animate-fade-up section-box mt-12">
-    <h3 class="text-3xl font-bold text-white mb-6"> Who Am I? Let's Keep It Real</h3>
-    <p class="text-white/90 text-lg mb-6">
-      Hey! I'm someone who's <strong>constantly curious</strong> — if something moves, makes noise, or lights up, chances are I've already wondered <em>how it works</em>.
-      Blame it on growing up around a mechanical engineer dad — I've picked up more mechanical terms from his phone calls than any textbook ever taught me.
-     
-    </p>
-    <ul class="list-disc list-inside space-y-2 text-white/80 text-base">
-      <li> Jamming on the guitar or piano</li>
-      <li> Learning to play drums (loudly and proudly)</li>
-      <li> Singing like nobody's watching (except maybe my dog)</li>
-      <li> Shooting hoops when I feel sporty</li>
-      <li> Going on bike or car rides because adventure is therapy</li>
-      <li> Dreaming of the next place I'll travel to</li>
-      <li> And yes, technically I'm <em>always</em> free (or at least free enough to pretend)</li>
-    </ul>
-    <p class="text-white mt-6 font-semibold">
-      TL;DR: I'm an energetic, curious, slightly chaotic mix of a coder, creative, and somewhat driven towards Music. 
-    </p>
-  </section>
+  <section id="projects" class="py-24 px-6 relative">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl md:text-5xl font-bold mb-4">Mission <span class="text-cosmic-cyan">Logs</span></h2>
+        <p class="text-gray-400 text-sm md:text-base"><i class="fas fa-mouse-pointer animate-bounce"></i> Hover over the cards to decrypt detailed mission data.</p>
+      </div>
 
-  <!-- Experience Section -->
-  <!-- Experience Section -->
-<section id="experience" class="py-16 px-6 max-w-4xl mx-auto animate-fade-up section-box mt-12">
-    <h3 class="text-3xl font-bold text-white mb-10">Experience</h3>
-  
-    <!-- Maxgen Technologies Internship -->
-    <div class="mb-10">
-      <p class="text-lg text-white font-semibold mb-4">
-        Software Engineering Intern – Maxgen Technologies, Pune (May 2024 – July 2024)
-      </p>
-      <ul class="list-disc list-outside pl-6 text-white/90 space-y-2">
-        <li>Worked on developing internal tools using Python and React.</li>
-        <li>Optimized backend queries, improving load time by 30%.</li>
-        <li>Collected, cleaned, and preprocessed datasets using Pandas and NumPy to support data-driven decision-making.</li>
-        <li>Performed exploratory data analysis (EDA) using Matplotlib and Seaborn to identify trends and patterns.</li>
-        <li>Built visual dashboards and graphs for internal reporting using Plotly and Matplotlib.</li>
-      </ul>
-    </div>
-  
-    <!-- Sur Devils Outreach Lead -->
-    <div class="mb-10">
-      <p class="text-lg text-white font-semibold mb-4">
-        Technical Outreach Lead – Sur Devils, ASU (Jan 2025 – Present)
-      </p>
-      <ul class="list-disc list-outside pl-6 text-white/90 space-y-2">
-        <li>Led outreach campaigns and built automated RSVP and tracking tools for music club activities.</li>
-        <li>Made flyers, posters, and social media announcements about upcoming events.</li>
-        <li>Collaborated with other clubs and organizations at ASU for student body engagement.</li>
-      </ul>
-    </div>
-  
-    <!-- Mahindra CIE Internship -->
-    <div>
-      <p class="text-lg text-white font-semibold mb-4">
-        Administrative Assistant – Mahindra CIE, Pune (May 2023 – Aug 2023)
-      </p>
-      <ul class="list-disc list-outside pl-6 text-white/90 space-y-2">
-        <li>Provided technical support and training for students and staff, enhancing the effectiveness of educational technologies.</li>
-        <li>Greeted and directed guests, maintained the visitor log, and communicated effectively with a diverse community via email, phone, and in-person meetings.</li>
-        <li>Tracked and reconciled office supply inventory bi-weekly and assisted with event setup, cleanup, and organization.</li>
-        <li>Gained hands-on experience with the ERP system of a leading automotive and magnetic processing company.</li>
-      </ul>
+      <div class="grid md:grid-cols-2 gap-10">
+        
+        <div class="flip-card group">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <div class="w-16 h-16 bg-purple-500/20 rounded-full flex items-center justify-center mb-6 border border-purple-500/50 shadow-[0_0_20px_#9d50bb]">
+                <i class="fas fa-server text-3xl text-purple-300"></i>
+              </div>
+              <h3 class="text-2xl font-bold text-white mb-2">DataVault</h3>
+              <p class="text-cosmic-cyan text-sm font-bold tracking-widest mb-4">SUNHACKS WINNER</p>
+              <div class="flex gap-2">
+                <span class="px-2 py-1 bg-white/10 rounded text-xs">PostgreSQL</span>
+                <span class="px-2 py-1 bg-white/10 rounded text-xs">Python</span>
+              </div>
+            </div>
+            <div class="flip-card-back px-8">
+              <h3 class="text-xl font-bold text-cosmic-cyan mb-4">Mission Details</h3>
+              <ul class="text-sm text-gray-300 space-y-3 list-disc list-outside ml-4">
+                <li>Designed normalized relational database schemas ensuring data integrity and minimal redundancy.</li>
+                <li>Built automated data ingestion pipelines in Python to load, clean, and validate structured data into PostgreSQL.</li>
+                <li>Optimized database performance using indexes, query planning, and execution analysis.</li>
+                <li><strong>Award Recipient:</strong> Recognized for efficient schema design and join optimization.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="flip-card group">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <div class="w-16 h-16 bg-blue-500/20 rounded-full flex items-center justify-center mb-6 border border-blue-500/50 shadow-[0_0_20px_#3b82f6]">
+                <i class="fas fa-chart-pie text-3xl text-blue-300"></i>
+              </div>
+              <h3 class="text-2xl font-bold text-white mb-2">Budget Analytics Tool</h3>
+              <p class="text-blue-400 text-sm font-bold tracking-widest mb-4">FINANCIAL DATA ENG</p>
+              <div class="flex gap-2">
+                <span class="px-2 py-1 bg-white/10 rounded text-xs">Pandas</span>
+                <span class="px-2 py-1 bg-white/10 rounded text-xs">Power BI</span>
+              </div>
+            </div>
+            <div class="flip-card-back px-8">
+              <h3 class="text-xl font-bold text-blue-400 mb-4">Mission Details</h3>
+              <ul class="text-sm text-gray-300 space-y-3 list-disc list-outside ml-4">
+                <li>Processed and analyzed 12+ months of expense data to identify spending patterns.</li>
+                <li>Designed SQL queries and Python workflows to compute category-wise trends and budget adherence.</li>
+                <li>Supported financial decision-making through data-driven visualizations in Power BI.</li>
+                <li>Utilized Matplotlib and NumPy for statistical analysis.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+      </div>
     </div>
   </section>
-  
-  
-  
-  
-  <!-- Activities Section -->
-  <section id="activities" class="py-16 px-6 max-w-4xl mx-auto animate-fade-up section-box mt-12">
-    <h3 class="text-3xl font-bold text-white mb-4">Activities</h3>
-    <ul class="list-disc list-inside text-white/80 space-y-2">
-      <li>Performed live guitar & vocals for various events and clubs across campus</li>
-      <li>Composed music for showcase attended by Mrs. Smriti Irani and President Michael Crow</li>
-      <li>Was the basketball captain for U-19 Girls team</li>
-      <li>Trinity College of London Certificate in piano</li>
-    </ul>
+
+  <section id="experience" class="py-24 px-6 bg-black/30">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-3xl md:text-4xl font-bold mb-12 text-center">Career <span class="text-purple-400">Trajectory</span></h2>
+      
+      <div class="space-y-8 relative before:absolute before:inset-0 before:ml-5 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-gray-600 before:to-transparent">
+        
+        <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active">
+          <div class="flex items-center justify-center w-10 h-10 rounded-full border border-white bg-slate-800 group-[.is-active]:bg-emerald-500 text-slate-500 group-[.is-active]:text-emerald-50 shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2">
+            <i class="fas fa-briefcase text-xs"></i>
+          </div>
+          <div class="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] glass-panel p-6">
+            <div class="flex justify-between items-center mb-1">
+              <h3 class="font-bold text-white">Program Assistant</h3>
+              <time class="text-xs font-medium text-gray-400">Aug 2025 - Dec 2025</time>
+            </div>
+            <p class="text-cosmic-cyan text-xs mb-2">Center for the Study of Race and Democracy, ASU</p>
+            <p class="text-gray-400 text-sm">Coordinated operational logistics for 15+ university events. Assisted in data tracking/reporting for program engagement metrics and managed event communications.</p>
+          </div>
+        </div>
+
+        <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active">
+          <div class="flex items-center justify-center w-10 h-10 rounded-full border border-white bg-slate-800 group-[.is-active]:bg-purple-500 text-slate-500 group-[.is-active]:text-emerald-50 shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2">
+            <i class="fas fa-chalkboard-teacher text-xs"></i>
+          </div>
+          <div class="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] glass-panel p-6">
+            <div class="flex justify-between items-center mb-1">
+              <h3 class="font-bold text-white">Teaching Assistant</h3>
+              <time class="text-xs font-medium text-gray-400">Jan 2025 - May 2025</time>
+            </div>
+            <p class="text-purple-400 text-xs mb-2">School of Computing & AI, ASU</p>
+            <p class="text-gray-400 text-sm">Tutored 40+ students in programming logic and statistics. Mentored students on debugging strategies and prepared them for exams.</p>
+          </div>
+        </div>
+
+         <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active">
+          <div class="flex items-center justify-center w-10 h-10 rounded-full border border-white bg-slate-800 group-[.is-active]:bg-blue-500 text-slate-500 group-[.is-active]:text-emerald-50 shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2">
+            <i class="fas fa-laptop-code text-xs"></i>
+          </div>
+          <div class="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] glass-panel p-6">
+            <div class="flex justify-between items-center mb-1">
+              <h3 class="font-bold text-white">Frontend Developer</h3>
+              <time class="text-xs font-medium text-gray-400">May 2024 - July 2024</time>
+            </div>
+            <p class="text-blue-400 text-xs mb-2">Esbee Power Solutions</p>
+            <p class="text-gray-400 text-sm">Deployed and maintained production websites, managing updates and version control using Git/GitHub.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
   </section>
 
-  
-  
-  
-  
-  <!-- Campus Involvement Section -->
-<section id="campus" class="py-16 px-6 max-w-4xl mx-auto animate-fade-up section-box mt-12">
-    <h3 class="text-3xl font-bold text-white mb-6">Campus Involvement</h3>
-  
-    <!-- Sur Devils Music Club -->
-    <div class="mb-8">
-      <h4 class="text-xl font-semibold text-white"> Sur Devils Music Club – Outreach & PR Lead</h4>
-      <ul class="list-disc list-outside text-white/90 mt-2 space-y-2">
-        <li>Led outreach and promotions for ASU's premier Indian fusion music club.</li>
-        <li>Designed posters, managed Instagram & PR activities, and collaborated with other campus organizations.</li>
-        <li>Organized and emceed musical events, performances, and showcases across campus.</li>
-      </ul>
-    </div>
-  
-    <!-- Member of Devlabs -->
-    <div class="mb-8">
-      <h4 class="text-xl font-semibold text-white">Member of Devlabs</h4>
-      <ul class="list-disc list-outside text-white/90 mt-2 space-y-2">
-        <li>Involved with Devlabs as a member by participating in coding events and hackathons. </li>
-      </ul>
-    </div>
-  
-    <!-- Event Support & Tablings -->
-    <div>
-      <h4 class="text-xl font-semibold text-white">Event Participation & Tablings</h4>
-      <ul class="list-disc list-outside text-white/90 mt-2 space-y-2">
-        <li>Regularly participated in tabling events, promoting club activities to new students.</li>
-        <li>Helped organize Welcome Week booths, workshops, and club fair presentations.</li>
-      </ul>
+  <section id="skills" class="py-20 px-6">
+    <div class="max-w-5xl mx-auto">
+      <h2 class="text-3xl font-bold mb-8 text-center"><i class="fas fa-tools text-cosmic-cyan"></i> Inventory / Skills</h2>
+      <div class="glass-panel p-10">
+        <div class="grid md:grid-cols-3 gap-8">
+          <div>
+            <h4 class="text-purple-400 font-bold mb-4 uppercase text-xs tracking-wider">Languages</h4>
+            <div class="flex flex-wrap gap-2">
+              <span class="skill-pill">Python</span>
+              <span class="skill-pill">Java</span>
+              <span class="skill-pill">TypeScript</span>
+              <span class="skill-pill">C++ / C</span>
+              <span class="skill-pill">SQL</span>
+              <span class="skill-pill">MATLAB</span>
+            </div>
+          </div>
+          <div>
+            <h4 class="text-cosmic-cyan font-bold mb-4 uppercase text-xs tracking-wider">Libraries & Frameworks</h4>
+            <div class="flex flex-wrap gap-2">
+              <span class="skill-pill">Pandas</span>
+              <span class="skill-pill">NumPy</span>
+              <span class="skill-pill">Flask</span>
+              <span class="skill-pill">React</span>
+              <span class="skill-pill">Matplotlib</span>
+            </div>
+          </div>
+          <div>
+            <h4 class="text-blue-400 font-bold mb-4 uppercase text-xs tracking-wider">Tools</h4>
+            <div class="flex flex-wrap gap-2">
+              <span class="skill-pill">Git / GitHub</span>
+              <span class="skill-pill">Linux</span>
+              <span class="skill-pill">Power BI</span>
+              <span class="skill-pill">Jupyter</span>
+              <span class="skill-pill">Excel</span>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
-  
-  <section id="related-coursework" class="py-16 px-6 max-w-4xl mx-auto animate-fade-up section-box mt-12">
-  <h3 class="text-3xl font-bold text-white mb-6">Related Coursework</h3>
-  <ul class="list-disc list-inside text-white/90 space-y-2">
-    <li> CSE 310 - Data Structures and Algorithms</li>
-    <li>CSE 230 - Comp org / Assembly Language Programming</li>
-    <li>CSE 360 - Intro to Software Engineering</li>
-    <li>CSE 330 - Operating Systems</li>
-    <li>CIS 300 - Web Development</li>
-    <li>CSE 240 - Intro to programming languages</li>
-    <li>CSE 205 - Object Oriented Programming</li>
-    <li>CSE 355 - Introduction to Theoretical Computer Science</li>
-    <li>CSE 365 - Introduction to Cybersecurity</li>
-     <li>IEE - 380 - Probability and Statistics</li>
-  </ul>
-</section>
 
-<section id="education" class="py-16 px-6 max-w-4xl mx-auto animate-fade-up section-box mt-12">
-  <h3 class="text-3xl font-bold text-white mb-6">Education</h3>
-  <p class="text-white/90 text-lg">
-    <strong>Bachelors of Science in Computer Science @ Arizona State University</strong><br>
-    Expected Graduation: May 2027<br>
-    Cumulative GPA: 3.85/4.00<br>
-    Honors: Dean's List (2023, 2024)
-  </p>
-</section>
+  <footer class="py-8 text-center text-gray-500 text-sm bg-black">
+    &copy; 2026 Nandini Prashant Bahirgonde. System Online.
+  </footer>
 
-
-<section id="skills" class="py-16 px-6 max-w-4xl mx-auto animate-fade-up section-box mt-12 mb-10">
-  <h3 class="text-3xl font-bold text-white mb-6">Skills</h3>
-  <ul class="text-white/90 space-y-2">
-    <li><strong>Programming Languages:</strong> Python, Java, C, C++, HTML, CSS, JavaScript, mySQL</li>
-    <li><strong>Libraries/Frameworks:</strong> Tailwind CSS, Flask, React (beginner), OpenCV, Pandas, NumPy, Matplotlib</li>
-    <li><strong>Tools:</strong> Git, GitHub, VS Code, Jupyter Notebook, Figma, Excel</li>
-    <li><strong>Data Visualization Analytics:</strong> Tableau, Excel</li>
-    <li><strong>Soft Skills:</strong> Team Collaboration, Communication, Problem Solving, Creative Thinking</li>
-  </ul>
-</section>
-
-  
-
-
-
-
- 
-  <!-- Dark Mode Toggle -->
   <script>
-    const toggle = document.getElementById("toggleDark");
-    const html = document.documentElement;
-
-    toggle.addEventListener("click", () => {
-      html.classList.toggle("dark");
-      localStorage.setItem("theme", html.classList.contains("dark") ? "dark" : "light");
-    });
-
-    if (localStorage.getItem("theme") === "dark") {
-      html.classList.add("dark");
+    // Create Stars Logic
+    const starContainer = document.getElementById('star-container');
+    const starCount = 100;
+    for(let i=0; i<starCount; i++){
+      let star = document.createElement('div');
+      star.className = 'star';
+      let xy = Math.random() * 100;
+      let duration = Math.random() * (1.5 - 0.5) + 0.5;
+      let size = Math.random() * (3 - 1) + 1;
+      star.style.left = Math.random() * 100 + '%';
+      star.style.top = Math.random() * 100 + '%';
+      star.style.width = size + 'px';
+      star.style.height = size + 'px';
+      star.style.setProperty('--duration', duration + 's');
+      starContainer.appendChild(star);
     }
   </script>
-
-<script>
-    let lastScrollTop = 0;
-    const header = document.querySelector("header");
-  
-    window.addEventListener("scroll", function () {
-      const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
-  
-      if (currentScroll > lastScrollTop) {
-        // Scrolling down — hide navbar
-        header.style.transform = "translateY(-100%)";
-      } else {
-        // Scrolling up — show navbar
-        header.style.transform = "translateY(0)";
-      }
-  
-      lastScrollTop = currentScroll <= 0 ? 0 : currentScroll; // For Safari
-    });
-  </script>
-  
 </body>
 </html>
