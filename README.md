@@ -1,4 +1,4 @@
-# Nandini Bahirgonde — Portfolio Website
+# Nandini Bahirgonde: Portfolio Website
 
 This repository contains the source code for my personal portfolio website, built to showcase my academic background, technical skills, projects, and professional experience as a Computer Science student.
 
